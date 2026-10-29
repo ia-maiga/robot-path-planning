@@ -1,0 +1,13 @@
+# Fichiers générés par Python
+__pycache__/
+*.pyc
+
+# Cache de pytest
+.pytest_cache/
+
+# Réglages personnels de VS Code
+.vscode/
+
+# Fichiers système
+.DS_Store
+Thumbs.db
