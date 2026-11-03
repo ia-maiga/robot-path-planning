@@ -26,3 +26,7 @@
 - WSL (Ubuntu), projet dans le disque Linux.
 - Environnement Conda dédié : `robot`, Python 3.12.
 - Paquet `pathplanning/` plutôt que `src/`, pour simplifier les imports avec pytest.
+
+## 2026-11-03
+- voisins : vérification des 4 bornes avant l'accès à la grille (court-circuit de and).
+- voisins ne filtre pas les cases déjà vues : c'est le rôle de l'algorithme de recherche.
