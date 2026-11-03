@@ -1,46 +1,66 @@
 from pathplanning.grid import voisins
 
-GRILLE = [
+# ---------------------------------------------------------------
+# Grilles de test
+# Convention : (ligne, colonne). True = libre, False = obstacle.
+# ---------------------------------------------------------------
+
+# La grille de l'exercice fait à la main.
+GRILLE_EXERCICE = [
     [True,  True,  True,  False],
     [False, False, True,  True ],
     [True,  True,  True,  True ],
 ]
 
+# La case (1, 1) est libre, ses 4 voisins orthogonaux sont des obstacles,
+# mais ses 4 diagonales sont libres.
+GRILLE_CASE_ENTOUREE = [
+    [True,  False, True,  False],
+    [False, True,  False, True ],
+    [True,  False, True,  True ],
+]
+
+GRILLE_UNE_CASE = [
+    [True],
+]
+
+GRILLE_UNE_LIGNE = [
+    [True, False, True, True],
+]
+
+
+# ---------------------------------------------------------------
+# Tests sur la grille de l'exercice
+# ---------------------------------------------------------------
 
 def test_coin_haut_gauche():
-    assert voisins(GRILLE, (0, 0)) == [(0, 1)]
+    assert voisins(GRILLE_EXERCICE, (0, 0)) == [(0, 1)]
 
 
 def test_case_avec_trois_voisins():
-    assert voisins(GRILLE, (1, 2)) == [(0, 2), (1, 3), (2, 2)]
+    assert voisins(GRILLE_EXERCICE, (1, 2)) == [(0, 2), (1, 3), (2, 2)]
 
 
 def test_coin_bas_gauche():
-    assert voisins(GRILLE, (2, 0)) == [(2, 1)]
+    assert voisins(GRILLE_EXERCICE, (2, 0)) == [(2, 1)]
 
 
 def test_coin_bas_droite():
-    assert voisins(GRILLE, (2, 3)) == [(1, 3), (2, 2)]
-    
-GRILLE2 = [
-    [True,  False,  True,  False],
-    [False, True, False,  True ],
-    [True,  False,  True,  True ],
-]
+    assert voisins(GRILLE_EXERCICE, (2, 3)) == [(1, 3), (2, 2)]
 
-def test_entouree_obstacle():
-    assert(voisins(GRILLE2, (1, 1)) == [ ])
-    
-GRILLE3 = [
-    [True]
-]
 
-def test_une_case():
-    assert(voisins(GRILLE3, (0,0)) == [ ])
-    
-GRILLE4 = [
-    [True,  False,  True,  True],
-]
+# ---------------------------------------------------------------
+# Cas particuliers
+# ---------------------------------------------------------------
 
-def test_une_ligne():
-    assert(voisins(GRILLE4, (0, 3)) == [(0, 2)])
+def test_case_entouree_d_obstacles():
+    # Vérifie aussi que les diagonales ne sont pas des voisins.
+    assert voisins(GRILLE_CASE_ENTOUREE, (1, 1)) == []
+
+
+def test_grille_d_une_seule_case():
+    assert voisins(GRILLE_UNE_CASE, (0, 0)) == []
+
+
+def test_bord_droit_d_une_grille_d_une_ligne():
+    assert voisins(GRILLE_UNE_LIGNE, (0, 3)) == [(0, 2)]
