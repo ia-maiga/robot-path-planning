@@ -30,3 +30,8 @@
 ## 2026-11-03
 - voisins : vérification des 4 bornes avant l'accès à la grille (court-circuit de and).
 - voisins ne filtre pas les cases déjà vues : c'est le rôle de l'algorithme de recherche.
+
+## 2026-11-04
+- BFS : le dictionnaire pred sert aussi d'ensemble « déjà vue ».
+- Test d'arrivée juste après popleft() : arrêt à l'extraction.
+- Pas de chemin : BFS renvoie None, jamais un message texte.
