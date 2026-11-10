@@ -3,6 +3,7 @@ from collections import deque
 from pathplanning.grid import voisins
 from pathplanning.resultat import ResultatRecherche
 
+
 def reconstruire_chemin(pred, arrivee):
     """Remonte les prédécesseurs depuis `arrivee` jusqu'au départ,
     et renvoie le chemin dans l'ordre départ → arrivée."""
@@ -13,6 +14,7 @@ def reconstruire_chemin(pred, arrivee):
         case = pred[case]
     chemin.reverse()
     return chemin
+
 
 def bfs(grille, depart, arrivee):
     """Cherche un plus court chemin de `depart` à `arrivee` avec BFS.

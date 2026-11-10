@@ -7,17 +7,17 @@ from pathplanning.grid import voisins
 
 # La grille de l'exercice fait à la main.
 GRILLE_EXERCICE = [
-    [True,  True,  True,  False],
-    [False, False, True,  True ],
-    [True,  True,  True,  True ],
+    [True, True, True, False],
+    [False, False, True, True],
+    [True, True, True, True],
 ]
 
 # La case (1, 1) est libre, ses 4 voisins orthogonaux sont des obstacles,
 # mais ses 4 diagonales sont libres.
 GRILLE_CASE_ENTOUREE = [
-    [True,  False, True,  False],
-    [False, True,  False, True ],
-    [True,  False, True,  True ],
+    [True, False, True, False],
+    [False, True, False, True],
+    [True, False, True, True],
 ]
 
 GRILLE_UNE_CASE = [
@@ -32,6 +32,7 @@ GRILLE_UNE_LIGNE = [
 # ---------------------------------------------------------------
 # Tests sur la grille de l'exercice
 # ---------------------------------------------------------------
+
 
 def test_coin_haut_gauche():
     assert voisins(GRILLE_EXERCICE, (0, 0)) == [(0, 1)]
@@ -52,6 +53,7 @@ def test_coin_bas_droite():
 # ---------------------------------------------------------------
 # Cas particuliers
 # ---------------------------------------------------------------
+
 
 def test_case_entouree_d_obstacles():
     # Vérifie aussi que les diagonales ne sont pas des voisins.
