@@ -35,3 +35,9 @@
 - BFS : le dictionnaire pred sert aussi d'ensemble « déjà vue ».
 - Test d'arrivée juste après popleft() : arrêt à l'extraction.
 - Pas de chemin : BFS renvoie None, jamais un message texte.
+
+## 2026-11-10
+- BFS renvoie un ResultatRecherche (dataclass partagée par les trois algorithmes).
+- Développés : comptés après le test d'arrivée, donc l'arrivée n'est pas comptée.
+- Générés : len(pred), départ inclus.
+- Coût : len(chemin) - 1. Sans chemin, chemin et coût valent None.
