@@ -44,3 +44,6 @@
 - Vérificateur chemin_valide : indépendant de voisins, pour ne pas partager ses bugs.
 - Adjacence vérifiée par distance de Manhattan égale à 1.
 - Ne vérifie pas l'optimalité : celle-ci sera contrôlée en comparant les coûts des 3 algorithmes.
+- Vérificateur chemin_valide : indépendant de voisins, pour ne pas partager ses bugs.
+- Adjacence vérifiée par distance de Manhattan égale à 1.
+- Chaque test d'invalidité ne viole qu'une seule condition (vérifié par mutation).
