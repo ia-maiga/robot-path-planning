@@ -1,1 +1,3 @@
 pytest
+conda activate robot
+pip install matplotlib numpy

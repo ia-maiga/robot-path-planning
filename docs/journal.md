@@ -47,3 +47,9 @@
 - Vérificateur chemin_valide : indépendant de voisins, pour ne pas partager ses bugs.
 - Adjacence vérifiée par distance de Manhattan égale à 1.
 - Chaque test d'invalidité ne viole qu'une seule condition (vérifié par mutation).
+
+Caractère	Signification
+    .	     case libre
+    #	     obstacle
+    S      départ, case libre
+    G      arrivée, case libre
